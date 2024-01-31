@@ -1,0 +1,88 @@
+<nav
+  id="mainNavbar"
+  class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark"
+>
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="centered.toggle()"
+      aria-controls="navbarCentered"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-left ms-5">
+      <a
+        class="navbar-brand ms-2"
+        routerLink="/HomePage"
+        [routerLinkActive]="'active'"
+      >
+        <img src="" />
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" mdbCollapse #centered="mdbCollapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/Habilitations"
+            >As Minhas Habilitações</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/Experiences"
+            >As Minhas Experiências</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/HomePage#contacts">Contactos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/HomePage#aboutus">Sobre Nós</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="collapse form-inline my-2 my-lg-0 me-5">
+      <ng-container *ngIf="user.username">
+        <div class="dropdown me-3">
+          <button>
+            <div class="profiles">
+              <figure>
+                <img
+                  *ngIf="!user.image"
+                  [src]="user?.image"
+                  alt="User Image"
+                  class="default-user-image"
+                />
+              </figure>
+              <p>Olá, {{ user.username }}</p>
+            </div>
+          </button>
+
+          <div class="dropdown-content">
+            <a *ngIf="user.username" routerLink="/UserProfile/User-EditInfo"
+              >Perfil</a
+            >
+            <a *ngIf="user.username" (click)="logoutuser()">Sair</a>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="!user.username">
+        <div class="dropdown me-3">
+          <button>
+            <mat-icon>person</mat-icon>
+          </button>
+          <div class="dropdown-content">
+            <a routerLink="/Authentication/User-Login">Login</a>
+            <a routerLink="/Authentication/User-Register">Registo</a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</nav>
+<br /><br /><br /><br /><br /><br />
