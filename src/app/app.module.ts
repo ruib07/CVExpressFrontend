@@ -25,6 +25,7 @@ import { FooterComponent } from '../shared/footer/footer.component';
 import { ProfilesNavComponent } from '../shared/profiles-nav/profiles-nav.component';
 import { HabilitationsComponent } from '../components/Habilitations/Habilitations.component';
 import { ExperiencesComponent } from '../components/Experiences/Experiences.component';
+import { RecoverPasswordComponent } from '../components/Authentication/RecoverPassword/RecoverPassword.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ExperiencesComponent } from '../components/Experiences/Experiences.comp
     HomePageComponent,
     UserRegisterComponent,
     UserLoginComponent,
+    RecoverPasswordComponent,
     UserEditInfoComponent,
     UserAddHabilitationsComponent,
     UserAddExperienceComponent,

@@ -1,3 +1,36 @@
-<p>
-  profiles-nav works!
-</p>
+<nav
+  id="mainNavbar"
+  class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark"
+>
+  <div class="container-fluid">
+    <div class="navbar-collapse">
+      <a
+        class="navbar-brand ms-5"
+        routerLink="/home"
+        [routerLinkActive]="'active'"
+      >
+        <img src="../../assets/Logo/cvexpress-logo.png" />
+      </a>
+
+      <div class="icon-name ms-auto">
+        <div class="dropdown me-3">
+          <button>
+            <div *ngIf="user" class="profiles">
+              <figure>
+                <img src="../../assets/Icons/userimage.png" />
+              </figure>
+              <p>
+                Olá,
+                {{ user && user.fullname }}
+              </p>
+            </div>
+          </button>
+          <div *ngIf="user && user.fullname" class="dropdown-content">
+            <a (click)="logoutuser()">Sair</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<br /><br /><br /><br /><br /><br />

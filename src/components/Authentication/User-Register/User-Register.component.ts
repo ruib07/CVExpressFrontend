@@ -68,6 +68,16 @@ export class UserRegisterComponent {
             nationality: registerusers.nationality,
             phonenumber: registerusers.phonenumber,
             registeruser_id: res.id,
+            registerusers: {
+              fullname: registerusers.fullname,
+              email: registerusers.email,
+              password: registerusers.password,
+              phonenumber: registerusers.phonenumber,
+              birthdate: registerusers.birthdate,
+              location: registerusers.location,
+              country: registerusers.country,
+              nationality: registerusers.nationality,
+            },
           };
 
           this.http
