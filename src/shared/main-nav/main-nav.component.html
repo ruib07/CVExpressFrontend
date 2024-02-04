@@ -27,36 +27,36 @@
     <div class="collapse navbar-collapse" mdbCollapse #centered="mdbCollapse">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/HomePage#contacts">Contactos</a>
+          <a class="nav-link" routerLink="/contacts">Contactos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/HomePage#aboutus">Sobre Nós</a>
+          <a class="nav-link" routerLink="">Sobre Nós</a>
         </li>
       </ul>
     </div>
 
     <div class="collapse form-inline my-2 my-lg-0 me-5">
-      <ng-container *ngIf="user.fullname">
+      <ng-container *ngIf="user.fullName">
         <div class="dropdown me-3">
           <button>
             <div class="profiles">
               <figure>
                 <img src="../../assets/Icons/userimage.png" />
               </figure>
-              <p>Olá, {{ user.fullname }}</p>
+              <p>Olá, {{ user.fullName }}</p>
             </div>
           </button>
 
           <div class="dropdown-content">
-            <a *ngIf="user.fullname" routerLink="/UserProfile/User-EditInfo"
+            <a *ngIf="user.fullName" routerLink="/UserProfile/User-EditInfo"
               >Perfil</a
             >
-            <a *ngIf="user.fullname" (click)="logoutuser()">Sair</a>
+            <a *ngIf="user.fullName" (click)="logoutuser()">Sair</a>
           </div>
         </div>
       </ng-container>
 
-      <ng-container *ngIf="!user.fullname">
+      <ng-container *ngIf="!user.fullName">
         <div class="dropdown me-5">
           <button>
             <mat-icon>person</mat-icon>

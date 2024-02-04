@@ -10,6 +10,7 @@ import { UserAddExperienceComponent } from '../components/UserProfile/User-AddEx
 import { HabilitationsComponent } from '../components/Habilitations/Habilitations.component';
 import { ExperiencesComponent } from '../components/Experiences/Experiences.component';
 import { RecoverPasswordComponent } from '../components/Authentication/RecoverPassword/RecoverPassword.component';
+import { ContactsComponent } from '../components/contacts/contacts.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'Experiences',
     component: ExperiencesComponent,
+  },
+  {
+    path: 'contacts',
+    component: ContactsComponent,
   },
   {
     path: '**',

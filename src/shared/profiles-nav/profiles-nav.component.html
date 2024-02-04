@@ -21,11 +21,11 @@
               </figure>
               <p>
                 Olá,
-                {{ user && user.fullname }}
+                {{ user && user.fullName }}
               </p>
             </div>
           </button>
-          <div *ngIf="user && user.fullname" class="dropdown-content">
+          <div *ngIf="user && user.fullName" class="dropdown-content">
             <a (click)="logoutuser()">Sair</a>
           </div>
         </div>

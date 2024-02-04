@@ -26,6 +26,7 @@ import { ProfilesNavComponent } from '../shared/profiles-nav/profiles-nav.compon
 import { HabilitationsComponent } from '../components/Habilitations/Habilitations.component';
 import { ExperiencesComponent } from '../components/Experiences/Experiences.component';
 import { RecoverPasswordComponent } from '../components/Authentication/RecoverPassword/RecoverPassword.component';
+import { ContactsComponent } from '../components/contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { RecoverPasswordComponent } from '../components/Authentication/RecoverPa
     UserAddExperienceComponent,
     HabilitationsComponent,
     ExperiencesComponent,
+    ContactsComponent,
     MainNavComponent,
     LoginNavComponent,
     ProfilesNavComponent,

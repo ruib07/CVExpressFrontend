@@ -10,8 +10,6 @@ import { Router } from '@angular/router';
 export class MainNavComponent implements OnInit {
   constructor(private router: Router, private http: HttpClient) {}
 
-  responsavel: any = {};
-
   user: any = {};
 
   ngOnInit() {
@@ -19,9 +17,9 @@ export class MainNavComponent implements OnInit {
   }
 
   getUtilizador() {
-    if (typeof localStorage !== 'undefined') {
+    const userId = this.getUtilizadorId();
+    if (userId) {
       const accessToken = localStorage.getItem('accessToken');
-
       if (accessToken) {
         const headers = new HttpHeaders().set(
           'Authorization',
@@ -29,31 +27,30 @@ export class MainNavComponent implements OnInit {
         );
 
         this.http
-          .get(`http://localhost:5181/Users/${this.getUtilizadorId()}`, {
-            headers,
-          })
+          .get(`http://localhost:5181/RegisterUsers/${userId}`, { headers })
           .subscribe(
             (res: any) => {
               this.user = res;
-              console.log(res);
+              console.log('User data:', this.user);
             },
             (error) => {
-              console.error('Erro ao obter dados do utilizador: ', error);
+              console.error('Error fetching user data: ', error);
             }
           );
       }
     }
   }
 
-  getUtilizadorId() {
-    if (typeof localStorage !== 'undefined') {
-      const accessToken = localStorage.getItem('accessToken');
-      if (accessToken) {
-        const usertokenParts = accessToken.split('.');
-        if (usertokenParts.length === 3) {
-          const userdecodedToken = atob(usertokenParts[1]);
-          const usertokenInfo = JSON.parse(userdecodedToken);
-          return usertokenInfo.id;
+  getUtilizadorId(): string | null {
+    const accessToken = localStorage.getItem('accessToken');
+    if (accessToken) {
+      const tokenParts = accessToken.split('.');
+      if (tokenParts.length === 3) {
+        const payload = JSON.parse(atob(tokenParts[1]));
+        if (payload.Id) {
+          return payload.Id;
+        } else {
+          console.error('User ID not found in payload:', payload);
         }
       }
     }
@@ -61,9 +58,7 @@ export class MainNavComponent implements OnInit {
   }
 
   logoutuser() {
-    if (typeof localStorage !== 'undefined') {
-      localStorage.removeItem('accessToken');
-      this.router.navigate(['/Authentication/User-Login']);
-    }
+    localStorage.removeItem('accessToken');
+    this.router.navigate(['/Authentication/User-Login']);
   }
 }
