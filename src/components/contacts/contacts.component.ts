@@ -35,28 +35,18 @@ export class ContactsComponent {
     subject: string;
     message: string;
   }) {
-    const accessToken = localStorage.getItem('accessToken');
+    this.http.post('http://localhost:5181/Contacts', contactForm).subscribe(
+      (res: any) => {
+        this.showSuccess();
 
-    if (accessToken) {
-      const headers = new HttpHeaders().set(
-        'Authorization',
-        `Bearer ${accessToken}`
-      );
-      this.http
-        .post('http://localhost:5181/Contacts', contactForm, { headers })
-        .subscribe(
-          (res: any) => {
-            this.showSuccess();
-
-            setTimeout(() => {
-              window.location.reload();
-            }, 3000);
-          },
-          (error) => {
-            console.error(error);
-            this.showError();
-          }
-        );
-    }
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+      },
+      (error) => {
+        console.error(error);
+        this.showError();
+      }
+    );
   }
 }
