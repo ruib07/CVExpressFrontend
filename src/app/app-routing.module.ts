@@ -9,6 +9,7 @@ import { UserAddHabilitationsComponent } from '../components/UserProfile/User-Ad
 import { UserAddExperienceComponent } from '../components/UserProfile/User-AddExperience/User-AddExperience.component';
 import { HabilitationsComponent } from '../components/Habilitations/Habilitations.component';
 import { ExperiencesComponent } from '../components/Experiences/Experiences.component';
+import { RecoverPasswordGetEmailComponent } from '../components/Authentication/RecoverPassword-GetEmail/RecoverPassword-GetEmail.component';
 import { RecoverPasswordComponent } from '../components/Authentication/RecoverPassword/RecoverPassword.component';
 import { ContactsComponent } from '../components/contacts/contacts.component';
 
@@ -26,7 +27,11 @@ const routes: Routes = [
     component: UserLoginComponent,
   },
   {
-    path: 'Authentication/RecoverPassword',
+    path: 'Authentication/RecoverPassword-GetEmail',
+    component: RecoverPasswordGetEmailComponent,
+  },
+  {
+    path: 'Authentication/:email/RecoverPassword',
     component: RecoverPasswordComponent,
   },
   {

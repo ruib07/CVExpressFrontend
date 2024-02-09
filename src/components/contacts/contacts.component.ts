@@ -44,7 +44,6 @@ export class ContactsComponent {
         }, 3000);
       },
       (error) => {
-        console.error(error);
         this.showError();
       }
     );

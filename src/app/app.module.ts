@@ -27,6 +27,7 @@ import { HabilitationsComponent } from '../components/Habilitations/Habilitation
 import { ExperiencesComponent } from '../components/Experiences/Experiences.component';
 import { RecoverPasswordComponent } from '../components/Authentication/RecoverPassword/RecoverPassword.component';
 import { ContactsComponent } from '../components/contacts/contacts.component';
+import { RecoverPasswordGetEmailComponent } from '../components/Authentication/RecoverPassword-GetEmail/RecoverPassword-GetEmail.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ContactsComponent } from '../components/contacts/contacts.component';
     HomePageComponent,
     UserRegisterComponent,
     UserLoginComponent,
+    RecoverPasswordGetEmailComponent,
     RecoverPasswordComponent,
     UserEditInfoComponent,
     UserAddHabilitationsComponent,
