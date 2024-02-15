@@ -28,6 +28,7 @@ import { ExperiencesComponent } from '../components/Experiences/Experiences.comp
 import { RecoverPasswordComponent } from '../components/Authentication/RecoverPassword/RecoverPassword.component';
 import { ContactsComponent } from '../components/contacts/contacts.component';
 import { RecoverPasswordGetEmailComponent } from '../components/Authentication/RecoverPassword-GetEmail/RecoverPassword-GetEmail.component';
+import { SideNavprofilesComponent } from '../shared/side-navprofiles/side-navprofiles.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { RecoverPasswordGetEmailComponent } from '../components/Authentication/R
     MainNavComponent,
     LoginNavComponent,
     ProfilesNavComponent,
+    SideNavprofilesComponent,
     FooterComponent,
   ],
   imports: [

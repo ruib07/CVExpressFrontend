@@ -1,3 +1,125 @@
 <app-profiles-nav></app-profiles-nav>
+<app-side-navprofiles></app-side-navprofiles>
 
-<p>User-EditInfo works!</p>
+<form #updateUser="ngForm" (ngSubmit)="updateUserInfo(updateUser.value)">
+  <div class="responsible-info">
+    <div class="text-wrapper-3">
+      <h1 class="ms-5">O Meu Perfil</h1>
+    </div>
+    <div class="nome-utilizador-2">
+      <h4 class="ms-5">Nome Completo</h4>
+    </div>
+    <div class="nome-utilizador">
+      <div class="text-wrapper-2">
+        <input
+          type="text"
+          class="input"
+          name="flname"
+          [(ngModel)]="user.fullName"
+          required
+        />
+      </div>
+    </div>
+    <div class="email-label">
+      <h4 class="ms-5">Email</h4>
+    </div>
+    <div class="email-input">
+      <div class="email">
+        <input
+          type="email"
+          class="input"
+          name="email"
+          [(ngModel)]="user.email"
+          required
+        />
+      </div>
+    </div>
+    <div class="n-telefone-label">
+      <h4 class="ms-5">Número de Telefone</h4>
+    </div>
+    <div class="n-tele-input">
+      <div class="phone">
+        <input
+          type="tel"
+          class="input"
+          pattern="[2,6,9][0-9]{8}"
+          name="phone"
+          [(ngModel)]="user.phoneNumber"
+          required
+        />
+      </div>
+    </div>
+    <div class="password-label">
+      <h4 class="ms-5">Palavra-Passe</h4>
+    </div>
+    <div class="password-input">
+      <div class="password">
+        <input
+          [type]="changetype ? 'password' : 'text'"
+          class="input"
+          name="password"
+          [(ngModel)]="user.password"
+          required
+        />
+        <span class="eyeicon" (click)="viewpassword()">
+          <fa-icon [icon]="visible ? eyeIcon : eyeIconSlash"></fa-icon>
+        </span>
+      </div>
+    </div>
+    <div class="image-label">
+      <h4 class="ms-5">Data de Nascimento</h4>
+    </div>
+    <div class="image-input">
+      <div class="image">
+        <input
+          type="text"
+          class="input"
+          name="image"
+          [(ngModel)]="user.birtDate"
+        />
+      </div>
+    </div>
+    <div class="image-label">
+      <h4 class="ms-5">Morada</h4>
+    </div>
+    <div class="image-input">
+      <div class="image">
+        <input
+          type="text"
+          class="input"
+          name="image"
+          [(ngModel)]="user.location"
+        />
+      </div>
+    </div>
+    <div class="image-label">
+      <h4 class="ms-5">País</h4>
+    </div>
+    <div class="image-input">
+      <div class="image">
+        <input
+          type="text"
+          class="input"
+          name="image"
+          [(ngModel)]="user.country"
+        />
+      </div>
+    </div>
+    <div class="image-label">
+      <h4 class="ms-5">Nacionalidade</h4>
+    </div>
+    <div class="image-input">
+      <div class="image">
+        <input
+          type="text"
+          class="input"
+          name="image"
+          [(ngModel)]="user.nationality"
+        />
+      </div>
+    </div>
+    <div class="submeter">
+      <button type="submit" class="text-wrapper">Submeter</button>
+    </div>
+  </div>
+</form>
